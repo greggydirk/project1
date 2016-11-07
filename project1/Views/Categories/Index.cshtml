@@ -1,0 +1,45 @@
+﻿@model IEnumerable<project1.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+    <p>
+        
+        @using (Html.BeginForm())
+        {
+        <p>
+            cari dengan nama: @Html.TextBox("pencarian") 
+            <input type="submit" value="Search" />
+        </p>
+        }
+        </p>
+
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdCategory }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdCategory }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdCategory })
+        </td>
+    </tr>
+}
+
+</table>
