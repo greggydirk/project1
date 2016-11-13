@@ -38,7 +38,7 @@ namespace project1.DAL
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("Username", pengguna.Username);
                 cmd.Parameters.AddWithValue("Password", GetMD5Hash(pengguna.Password));
-                cmd.Parameters.AddWithValue("Aturan", pengguna.Aturan);
+                cmd.Parameters.AddWithValue("Aturan", pengguna.Email);
 
                 try
                 {

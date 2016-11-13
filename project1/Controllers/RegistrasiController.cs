@@ -29,7 +29,7 @@ namespace project1.Controllers
                 if (ModelState.IsValid)
                 {
                     pengDAL.Refistrasi(pengguna);
-                    ViewBag.Pesan = "Data Pengguna berhasil di Tambah ";
+                    ViewBag.Pesan = "Data Pengguna berhasil di Tambahkan ";
                 }
                 return View();
             }
